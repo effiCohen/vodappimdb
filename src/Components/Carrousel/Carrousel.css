@@ -1,0 +1,140 @@
+.home .carousel-item{
+    width: 100%;
+    min-height: 50vh;
+   background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+body{
+    background-color: rgb(35, 35, 35);
+}
+
+.home .carousel-item::before{
+    content: ' ';
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(104, 100, 100, 0.068);
+    z-index: -1;
+}
+.home .carousel-item .container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.home .carousel-item h2{
+    font-size: 40px;
+    color: #ffffff;
+    margin: 0 0 10px;
+   opacity: 0;
+}
+.home .carousel-item input{
+    opacity: 0;
+    margin: 2px;
+}
+
+.home .carousel-item.active h2{
+    animation: fadeInLeft 0.5s ease forwards;
+
+}
+.home .carousel-item.active input{
+    animation: fadeInRight 0.5s ease forwards;
+
+}
+.home .carousel-controles{
+position: relative;
+}
+.home .carousel-indicators{
+    position: absolute;
+    z-index: 10;
+    bottom: -22px;
+    padding: 2px;
+    margin: 3px;
+    gap: 20px;
+}
+.home .carousel-indicators button{
+    width:45px;
+    position: relative;
+    height: 45px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #221e1e2f;
+    box-shadow: 0 0 50px rgb(255, 252, 252);
+
+}
+
+
+.form {
+    --width-of-input: 200px;
+    --border-height: 1px;
+    --border-before-color: rgba(208, 203, 203, 0.862);
+    --input-hovered-color: rgba(208, 203, 203, 0.074);
+    width: var(--width-of-input);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+   }
+   
+   /* styling of Input */
+   .input {
+    color: #fff;
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+    border-radius: 3px 3px 4px 4px;
+ 
+   }
+   /* styling of animated border */
+   .input-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+   }
+   /* Hover on Input */
+   input:hover {
+    background: var(--input-hovered-color);
+
+   }
+   input::placeholder{
+    color: rgb(211, 208, 208);
+   }
+
+
+  
+
+@keyframes fadeInLeft{
+    0%{
+       opacity: 0;
+      transform: translateX(-30px);
+    }
+    100%{
+        opacity:1;
+        transform: translateX(0px);
+    }
+}
+@keyframes fadeInRight{
+    0%{
+       opacity: 0;
+      transform: translateX(30px);
+    }
+    100%{
+        opacity:1;
+        transform: translateX(0px);
+    }
+}
+
